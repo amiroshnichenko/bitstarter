@@ -13,7 +13,7 @@ app.get('/', function(request, response) {
 
   var data;
   readData("index.html", data);
-  response.send(data.ToString());
+  response.send(data.toString());
 //  response.send('Hello World2!');
 });
 
