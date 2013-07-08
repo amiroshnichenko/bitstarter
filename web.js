@@ -3,15 +3,15 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 
-var readData = function (fileName) {
+var readData = function (fileName), data {
   var fs = require('fs');
-  var data = fs.readFileSync(fileName);
-  return data;
+  fs.readFileSync(fileName, data);
 }
 
 app.get('/', function(request, response) {
 
-  var data = readData("index.html");
+  var data;
+  readData("index.html", data);
   response.send(data);
 //  response.send('Hello World2!');
 });
